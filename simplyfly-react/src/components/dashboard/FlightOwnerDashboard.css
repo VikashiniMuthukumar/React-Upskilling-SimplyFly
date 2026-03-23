@@ -1,0 +1,69 @@
+.owner-title {
+  color: #2c3e50;
+}
+
+/* Common Card Style */
+.dashboard-card {
+  height: 160px;
+  border-radius: 16px;
+  color: white;
+  cursor: pointer;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.dashboard-card h5 {
+  font-weight: 700;
+  margin: 8px 0 4px;
+}
+
+.dashboard-card p {
+  font-size: 14px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.dashboard-icon {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+/* Hover Effect */
+.dashboard-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Gradient Colors */
+.flight {
+  background: linear-gradient(135deg, #1d976c, #93f9b9);
+}
+
+.view {
+  background: linear-gradient(135deg, #2193b0, #6dd5ed);
+}
+
+.search {
+  background: linear-gradient(135deg, #ff512f, #f09819);
+}
+
+.route {
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+}
+
+.viewRoute {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.searchRoute {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+.profile {
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
+}

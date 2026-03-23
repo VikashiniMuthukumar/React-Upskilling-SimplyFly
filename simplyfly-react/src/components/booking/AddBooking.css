@@ -1,0 +1,104 @@
+.booking-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f7f9fc;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.booking-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.booking-date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.booking-date input[type="date"] {
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.btn-primary {
+  padding: 7px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+.flights-table-container {
+  margin-top: 20px;
+}
+
+.flights-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.flights-table th,
+.flights-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.flights-table th {
+  background-color: #3498db;
+  color: white;
+}
+
+.selected-row {
+  background-color: #d6eaf8;
+}
+
+.extra-seats-input {
+  width: 60px;
+  padding: 3px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.booking-btn {
+  margin-top: 15px;
+  float: right;
+}
+
+.no-flights {
+  text-align: center;
+  margin-top: 20px;
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.booking-summary {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #3498db;
+  border-radius: 10px;
+  background-color: #eaf2f8;
+}
+
+.booking-summary h4 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.booking-summary p {
+  margin: 5px 0;
+  font-size: 15px;
+}
