@@ -1,0 +1,1147 @@
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 21020 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 139 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 2831 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1b317e7d
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingRestController': Unsatisfied dependency expressed through field 'bookingService': Error creating bean with name 'bookingServiceImpl': Unsatisfied dependency expressed through field 'routeRepository': Error creating bean with name 'routeRepository' defined in com.hexaware.simplyfly.repositories.RouteRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwner_id(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwner_id(java.lang.Long); No property 'owner' found for type 'FlightOwner'; Traversed path: Route.flight.owner
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Stopping service [Tomcat]
+[INFO] : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[ERROR] : Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingRestController': Unsatisfied dependency expressed through field 'bookingService': Error creating bean with name 'bookingServiceImpl': Unsatisfied dependency expressed through field 'routeRepository': Error creating bean with name 'routeRepository' defined in com.hexaware.simplyfly.repositories.RouteRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwner_id(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwner_id(java.lang.Long); No property 'owner' found for type 'FlightOwner'; Traversed path: Route.flight.owner
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1364)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1353)
+	at com.hexaware.simplyfly.SimplyFlyApplication.main(SimplyFlyApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingServiceImpl': Unsatisfied dependency expressed through field 'routeRepository': Error creating bean with name 'routeRepository' defined in com.hexaware.simplyfly.repositories.RouteRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwner_id(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwner_id(java.lang.Long); No property 'owner' found for type 'FlightOwner'; Traversed path: Route.flight.owner
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1448)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1358)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 20 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'routeRepository' defined in com.hexaware.simplyfly.repositories.RouteRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwner_id(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwner_id(java.lang.Long); No property 'owner' found for type 'FlightOwner'; Traversed path: Route.flight.owner
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1448)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1358)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 34 common frames omitted
+Caused by: org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwner_id(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwner_id(java.lang.Long); No property 'owner' found for type 'FlightOwner'; Traversed path: Route.flight.owner
+	at org.springframework.data.repository.query.QueryCreationException.create(QueryCreationException.java:101)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:119)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:103)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:92)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:92)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:357)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:290)
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:135)
+	at org.springframework.data.util.Lazy.get(Lazy.java:113)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:296)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:132)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	... 44 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwner_id(java.lang.Long); No property 'owner' found for type 'FlightOwner'; Traversed path: Route.flight.owner
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:107)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:124)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:258)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:95)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:115)
+	... 56 common frames omitted
+Caused by: org.springframework.data.mapping.PropertyReferenceException: No property 'owner' found for type 'FlightOwner'; Traversed path: Route.flight.owner
+	at org.springframework.data.mapping.PropertyPath.<init>(PropertyPath.java:94)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:455)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:431)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:465)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:488)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:431)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:465)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:488)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:488)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:431)
+	at org.springframework.data.mapping.PropertyPath.lambda$from$0(PropertyPath.java:384)
+	at java.base/java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:330)
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:366)
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:344)
+	at org.springframework.data.repository.query.parser.Part.<init>(Part.java:81)
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.lambda$new$0(PartTree.java:259)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.<init>(PartTree.java:260)
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.lambda$new$0(PartTree.java:389)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.<init>(PartTree.java:390)
+	at org.springframework.data.repository.query.parser.PartTree.<init>(PartTree.java:103)
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:101)
+	... 60 common frames omitted
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 17208 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 78 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 1697 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@749ad37c
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingRestController': Unsatisfied dependency expressed through field 'bookingService': Error creating bean with name 'bookingServiceImpl': Unsatisfied dependency expressed through field 'routeRepository': Error creating bean with name 'routeRepository' defined in com.hexaware.simplyfly.repositories.RouteRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlight_Owner_Owner_id(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlight_Owner_Owner_id(java.lang.Long); No property 'owner' found for type 'FlightOwner'; Traversed path: Route.flight.owner
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Stopping service [Tomcat]
+[INFO] : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[ERROR] : Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingRestController': Unsatisfied dependency expressed through field 'bookingService': Error creating bean with name 'bookingServiceImpl': Unsatisfied dependency expressed through field 'routeRepository': Error creating bean with name 'routeRepository' defined in com.hexaware.simplyfly.repositories.RouteRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlight_Owner_Owner_id(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlight_Owner_Owner_id(java.lang.Long); No property 'owner' found for type 'FlightOwner'; Traversed path: Route.flight.owner
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1364)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1353)
+	at com.hexaware.simplyfly.SimplyFlyApplication.main(SimplyFlyApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingServiceImpl': Unsatisfied dependency expressed through field 'routeRepository': Error creating bean with name 'routeRepository' defined in com.hexaware.simplyfly.repositories.RouteRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlight_Owner_Owner_id(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlight_Owner_Owner_id(java.lang.Long); No property 'owner' found for type 'FlightOwner'; Traversed path: Route.flight.owner
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1448)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1358)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 20 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'routeRepository' defined in com.hexaware.simplyfly.repositories.RouteRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlight_Owner_Owner_id(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlight_Owner_Owner_id(java.lang.Long); No property 'owner' found for type 'FlightOwner'; Traversed path: Route.flight.owner
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1448)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1358)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 34 common frames omitted
+Caused by: org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlight_Owner_Owner_id(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlight_Owner_Owner_id(java.lang.Long); No property 'owner' found for type 'FlightOwner'; Traversed path: Route.flight.owner
+	at org.springframework.data.repository.query.QueryCreationException.create(QueryCreationException.java:101)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:119)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:103)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:92)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:92)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:357)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:290)
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:135)
+	at org.springframework.data.util.Lazy.get(Lazy.java:113)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:296)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:132)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	... 44 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlight_Owner_Owner_id(java.lang.Long); No property 'owner' found for type 'FlightOwner'; Traversed path: Route.flight.owner
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:107)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:124)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:258)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:95)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:115)
+	... 56 common frames omitted
+Caused by: org.springframework.data.mapping.PropertyReferenceException: No property 'owner' found for type 'FlightOwner'; Traversed path: Route.flight.owner
+	at org.springframework.data.mapping.PropertyPath.<init>(PropertyPath.java:94)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:455)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:431)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:415)
+	at org.springframework.data.mapping.PropertyPath.lambda$from$0(PropertyPath.java:387)
+	at java.base/java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:330)
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:366)
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:344)
+	at org.springframework.data.repository.query.parser.Part.<init>(Part.java:81)
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.lambda$new$0(PartTree.java:259)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.<init>(PartTree.java:260)
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.lambda$new$0(PartTree.java:389)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.<init>(PartTree.java:390)
+	at org.springframework.data.repository.query.parser.PartTree.<init>(PartTree.java:103)
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:101)
+	... 60 common frames omitted
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 14660 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 93 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 3167 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@23a78c77
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingRestController': Unsatisfied dependency expressed through field 'bookingService': Error creating bean with name 'bookingServiceImpl': Unsatisfied dependency expressed through field 'routeRepository': Error creating bean with name 'routeRepository' defined in com.hexaware.simplyfly.repositories.RouteRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwnerId(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwnerId(java.lang.Long); No property 'ownerId' found for type 'FlightOwner'; Did you mean 'owner_id'; Traversed path: Route.flight.owner
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Stopping service [Tomcat]
+[INFO] : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[ERROR] : Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingRestController': Unsatisfied dependency expressed through field 'bookingService': Error creating bean with name 'bookingServiceImpl': Unsatisfied dependency expressed through field 'routeRepository': Error creating bean with name 'routeRepository' defined in com.hexaware.simplyfly.repositories.RouteRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwnerId(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwnerId(java.lang.Long); No property 'ownerId' found for type 'FlightOwner'; Did you mean 'owner_id'; Traversed path: Route.flight.owner
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1364)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1353)
+	at com.hexaware.simplyfly.SimplyFlyApplication.main(SimplyFlyApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingServiceImpl': Unsatisfied dependency expressed through field 'routeRepository': Error creating bean with name 'routeRepository' defined in com.hexaware.simplyfly.repositories.RouteRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwnerId(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwnerId(java.lang.Long); No property 'ownerId' found for type 'FlightOwner'; Did you mean 'owner_id'; Traversed path: Route.flight.owner
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1448)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1358)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 20 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'routeRepository' defined in com.hexaware.simplyfly.repositories.RouteRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwnerId(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwnerId(java.lang.Long); No property 'ownerId' found for type 'FlightOwner'; Did you mean 'owner_id'; Traversed path: Route.flight.owner
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1448)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1358)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 34 common frames omitted
+Caused by: org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwnerId(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwnerId(java.lang.Long); No property 'ownerId' found for type 'FlightOwner'; Did you mean 'owner_id'; Traversed path: Route.flight.owner
+	at org.springframework.data.repository.query.QueryCreationException.create(QueryCreationException.java:101)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:119)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:103)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:92)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:92)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:357)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:290)
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:135)
+	at org.springframework.data.util.Lazy.get(Lazy.java:113)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:296)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:132)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	... 44 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract java.util.List com.hexaware.simplyfly.repositories.RouteRepository.findByFlightOwnerOwnerId(java.lang.Long); No property 'ownerId' found for type 'FlightOwner'; Did you mean 'owner_id'; Traversed path: Route.flight.owner
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:107)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:124)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:258)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:95)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:115)
+	... 56 common frames omitted
+Caused by: org.springframework.data.mapping.PropertyReferenceException: No property 'ownerId' found for type 'FlightOwner'; Did you mean 'owner_id'; Traversed path: Route.flight.owner
+	at org.springframework.data.mapping.PropertyPath.<init>(PropertyPath.java:94)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:455)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:431)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:465)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:488)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:488)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:431)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:465)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:488)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:488)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:488)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:431)
+	at org.springframework.data.mapping.PropertyPath.lambda$from$0(PropertyPath.java:384)
+	at java.base/java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:330)
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:366)
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:344)
+	at org.springframework.data.repository.query.parser.Part.<init>(Part.java:81)
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.lambda$new$0(PartTree.java:259)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.<init>(PartTree.java:260)
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.lambda$new$0(PartTree.java:389)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.<init>(PartTree.java:390)
+	at org.springframework.data.repository.query.parser.PartTree.<init>(PartTree.java:103)
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:101)
+	... 60 common frames omitted
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 1496 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 236 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 2609 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1bb4c431
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminRestController': Unsatisfied dependency expressed through field 'adminService': Error creating bean with name 'adminServiceImpl': Unsatisfied dependency expressed through field 'flightRepository': Error creating bean with name 'flightRepository' defined in com.hexaware.simplyfly.repositories.FlightRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.FlightRepository.findFlightsByOwnerId(java.lang.Long); Reason: Validation failed for query for method public abstract java.util.List com.hexaware.simplyfly.repositories.FlightRepository.findFlightsByOwnerId(java.lang.Long)
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Stopping service [Tomcat]
+[INFO] : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[ERROR] : Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminRestController': Unsatisfied dependency expressed through field 'adminService': Error creating bean with name 'adminServiceImpl': Unsatisfied dependency expressed through field 'flightRepository': Error creating bean with name 'flightRepository' defined in com.hexaware.simplyfly.repositories.FlightRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.FlightRepository.findFlightsByOwnerId(java.lang.Long); Reason: Validation failed for query for method public abstract java.util.List com.hexaware.simplyfly.repositories.FlightRepository.findFlightsByOwnerId(java.lang.Long)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1364)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1353)
+	at com.hexaware.simplyfly.SimplyFlyApplication.main(SimplyFlyApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminServiceImpl': Unsatisfied dependency expressed through field 'flightRepository': Error creating bean with name 'flightRepository' defined in com.hexaware.simplyfly.repositories.FlightRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.FlightRepository.findFlightsByOwnerId(java.lang.Long); Reason: Validation failed for query for method public abstract java.util.List com.hexaware.simplyfly.repositories.FlightRepository.findFlightsByOwnerId(java.lang.Long)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1448)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1358)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 20 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flightRepository' defined in com.hexaware.simplyfly.repositories.FlightRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.FlightRepository.findFlightsByOwnerId(java.lang.Long); Reason: Validation failed for query for method public abstract java.util.List com.hexaware.simplyfly.repositories.FlightRepository.findFlightsByOwnerId(java.lang.Long)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1448)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1358)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 34 common frames omitted
+Caused by: org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.util.List com.hexaware.simplyfly.repositories.FlightRepository.findFlightsByOwnerId(java.lang.Long); Reason: Validation failed for query for method public abstract java.util.List com.hexaware.simplyfly.repositories.FlightRepository.findFlightsByOwnerId(java.lang.Long)
+	at org.springframework.data.repository.query.QueryCreationException.create(QueryCreationException.java:101)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:119)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:103)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:92)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:92)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:357)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:290)
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:135)
+	at org.springframework.data.util.Lazy.get(Lazy.java:113)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:296)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:132)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	... 44 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List com.hexaware.simplyfly.repositories.FlightRepository.findFlightsByOwnerId(java.lang.Long)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:100)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.<init>(SimpleJpaQuery.java:70)
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromMethodWithQueryString(JpaQueryFactory.java:60)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$DeclaredQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:170)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:252)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:95)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:115)
+	... 56 common frames omitted
+Caused by: java.lang.IllegalArgumentException: org.hibernate.query.sqm.UnknownPathException: Could not resolve attribute 'owner_id' of 'com.hexaware.simplyfly.entities.FlightOwner' [SELECT f FROM Flight f WHERE f.owner.owner_id = :ownerId]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:143)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:167)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:173)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:860)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:765)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:140)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:364)
+	at jdk.proxy2/jdk.proxy2.$Proxy139.createQuery(Unknown Source)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:94)
+	... 62 common frames omitted
+Caused by: org.hibernate.query.sqm.UnknownPathException: Could not resolve attribute 'owner_id' of 'com.hexaware.simplyfly.entities.FlightOwner' [SELECT f FROM Flight f WHERE f.owner.owner_id = :ownerId]
+	at org.hibernate.query.hql.internal.StandardHqlTranslator.translate(StandardHqlTranslator.java:88)
+	at org.hibernate.query.internal.QueryInterpretationCacheStandardImpl.createHqlInterpretation(QueryInterpretationCacheStandardImpl.java:145)
+	at org.hibernate.query.internal.QueryInterpretationCacheStandardImpl.resolveHqlInterpretation(QueryInterpretationCacheStandardImpl.java:132)
+	at org.hibernate.internal.AbstractSharedSessionContract.interpretHql(AbstractSharedSessionContract.java:802)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:852)
+	... 69 common frames omitted
+Caused by: org.hibernate.query.sqm.PathElementException: Could not resolve attribute 'owner_id' of 'com.hexaware.simplyfly.entities.FlightOwner'
+	at org.hibernate.query.sqm.SqmPathSource.getSubPathSource(SqmPathSource.java:95)
+	at org.hibernate.query.sqm.tree.domain.AbstractSqmPath.get(AbstractSqmPath.java:196)
+	at org.hibernate.query.sqm.tree.domain.SqmEntityValuedSimplePath.resolvePathPart(SqmEntityValuedSimplePath.java:56)
+	at org.hibernate.query.hql.internal.DomainPathPart.resolvePathPart(DomainPathPart.java:42)
+	at org.hibernate.query.hql.internal.BasicDotIdentifierConsumer.consumeIdentifier(BasicDotIdentifierConsumer.java:92)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSimplePath(SemanticQueryBuilder.java:5269)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitIndexedPathAccessFragment(SemanticQueryBuilder.java:5218)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitGeneralPathFragment(SemanticQueryBuilder.java:5193)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitGeneralPathExpression(SemanticQueryBuilder.java:1886)
+	at org.hibernate.grammars.hql.HqlParser$GeneralPathExpressionContext.accept(HqlParser.java:7967)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+	at org.hibernate.grammars.hql.HqlParserBaseVisitor.visitBarePrimaryExpression(HqlParserBaseVisitor.java:777)
+	at org.hibernate.grammars.hql.HqlParser$BarePrimaryExpressionContext.accept(HqlParser.java:7425)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.createComparisonPredicate(SemanticQueryBuilder.java:2543)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitComparisonPredicate(SemanticQueryBuilder.java:2504)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitComparisonPredicate(SemanticQueryBuilder.java:275)
+	at org.hibernate.grammars.hql.HqlParser$ComparisonPredicateContext.accept(HqlParser.java:6432)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitWhereClause(SemanticQueryBuilder.java:2356)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitWhereClause(SemanticQueryBuilder.java:275)
+	at org.hibernate.grammars.hql.HqlParser$WhereClauseContext.accept(HqlParser.java:6173)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitQuery(SemanticQueryBuilder.java:1254)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitQuerySpecExpression(SemanticQueryBuilder.java:1035)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitQuerySpecExpression(SemanticQueryBuilder.java:275)
+	at org.hibernate.grammars.hql.HqlParser$QuerySpecExpressionContext.accept(HqlParser.java:2132)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSimpleQueryGroup(SemanticQueryBuilder.java:1020)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSimpleQueryGroup(SemanticQueryBuilder.java:275)
+	at org.hibernate.grammars.hql.HqlParser$SimpleQueryGroupContext.accept(HqlParser.java:2003)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSelectStatement(SemanticQueryBuilder.java:490)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitStatement(SemanticQueryBuilder.java:449)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.buildSemanticModel(SemanticQueryBuilder.java:322)
+	at org.hibernate.query.hql.internal.StandardHqlTranslator.translate(StandardHqlTranslator.java:71)
+	... 73 common frames omitted
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 4792 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 79 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 1668 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f70e244
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 6.783 seconds (process running for 7.641)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 0 ms
+[INFO] : Fetching all Routes
+[INFO] : Fetching all Routes
+[INFO] : Fetching all Routes
+[INFO] : Updating Route with ID: 15
+[INFO] : Route updated: Route [route_id=15, origin=Coimbatore, destination=Pallakad, departureTime=12:30, arrivalTime=15:30, baseFare=2600.0, scheduleDate=2026-03-24, availableSeats=0, flight=Flight [flightId=18, name=Indigo, flightCode=IN128, totalSeats=200, cabinBaggageLimit=7, checkInBaggageLimit=15], bookings=[]]
+[WARN] : Deleting Route with ID: 15
+[INFO] : Route deleted with ID: 15
+[INFO] : Creating Flight with data: AddFlightDTO [flightId=null, name=SpiceJet, flightCode=SJ259, totalSeats=210, cabinBaggageLimit=4, checkInBaggageLimit=15]
+[WARN] : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h58m57s770ms841µs).
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 6836 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 70 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 1818 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@430aae8e
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 13.2 seconds (process running for 14.377)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 2 ms
+[INFO] : Fetching all Routes
+[INFO] : Fetching all Routes
+[INFO] : Fetching all Routes
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 16
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 16
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 16
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 5768 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 103 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 1993 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7bbd76b8
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 6.903 seconds (process running for 7.608)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 2 ms
+[INFO] : Creating booking with data: BookingDTO [bookingId=null, bookedAt=2026-03-11T05:51:39.089, status=CONFIRMED, baseFare=3000.0, totalFare=3000.0, username=Aadhi, origin=Bangalore, destination=Hyderabad, seat=1, bookDate=2026-03-26, flightCode=IND101, flightName=Indigo, arrivalTime=13:55, departureTime=11:54, checkInBaggageLimit=0, cabinBaggageLimit=0, passengerName=null, passengerAge=0]
+[INFO] : Booking created with ID: 28
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 18612 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 59 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 1262 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4119346d
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 5.464 seconds (process running for 6.083)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 8 ms
+[INFO] : Creating booking with data: BookingDTO [bookingId=null, bookedAt=2026-03-11T05:53:48.355, status=CONFIRMED, baseFare=3000.0, totalFare=3000.0, username=Aadhi, origin=Bangalore, destination=Hyderabad, seat=1, bookDate=2026-03-26, flightCode=IND101, flightName=Indigo, arrivalTime=13:55, departureTime=11:54, checkInBaggageLimit=0, cabinBaggageLimit=0, passengerName=null, passengerAge=0]
+[INFO] : Booking created with ID: 29
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 22428 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 57 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 1229 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d0a2c82
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 5.294 seconds (process running for 5.864)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 6 ms
+[INFO] : Creating booking with data: BookingDTO [bookingId=null, bookedAt=2026-03-11T06:04:04.688, status=CONFIRMED, baseFare=3000.0, totalFare=3000.0, username=Aadhi, origin=Bangalore, destination=Hyderabad, seat=1, bookDate=2026-03-26, flightCode=IND101, flightName=Indigo, arrivalTime=13:55, departureTime=11:54, checkInBaggageLimit=0, cabinBaggageLimit=0, passengerName=null, passengerAge=0]
+[INFO] : Booking created with ID: 30
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 4284 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 61 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 1365 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@23a78c77
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 5.824 seconds (process running for 6.431)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 9 ms
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 21368 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 94 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 2254 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@749ad37c
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 16.919 seconds (process running for 17.753)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 0 ms
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 3648 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 85 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 1916 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@59b98ad1
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 7.601 seconds (process running for 8.397)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 5 ms
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 19
+[INFO] : Fetching all users
+[INFO] : Total users fetched: 14
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 19
+[INFO] : Fetching all users
+[INFO] : Total users fetched: 14
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 11552 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 78 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 1576 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@12608986
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 6.588 seconds (process running for 7.425)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 14 ms
+[WARN] : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=20m11s32ms112µs500ns).
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 19
+[INFO] : Fetching all users
+[INFO] : Total users fetched: 14
+[WARN] : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m4s349ms512µs).
+[WARN] : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m13s13ms309µs).
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 11960 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 188 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 3274 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@26d8908e
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 9.65 seconds (process running for 10.709)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 9 ms
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 19
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 19
+[INFO] : Fetching all users
+[INFO] : Total users fetched: 14
+[INFO] : Updating Route with ID: 1
+[INFO] : Route updated: Route [route_id=1, origin=Delhi, destination=Chennai, departureTime=07:05, arrivalTime=06:05, baseFare=3000.0, scheduleDate=2026-03-19, availableSeats=0, flight=Flight [flightId=1, name=Air India Express, flightCode=AI123, totalSeats=150, cabinBaggageLimit=7, checkInBaggageLimit=25], bookings=[]]
+[INFO] : Updating Route with ID: 2
+[INFO] : Route updated: Route [route_id=2, origin=Mumbai, destination=Chennai, departureTime=09:05, arrivalTime=08:10, baseFare=2500.0, scheduleDate=2026-03-20, availableSeats=0, flight=Flight [flightId=1, name=Air India Express, flightCode=AI123, totalSeats=150, cabinBaggageLimit=7, checkInBaggageLimit=25], bookings=[]]
+[INFO] : Updating Route with ID: 3
+[INFO] : Route updated: Route [route_id=3, origin=Madurai, destination=Coimbatore, departureTime=11:05, arrivalTime=10:10, baseFare=2500.0, scheduleDate=2026-03-21, availableSeats=0, flight=Flight [flightId=2, name=Indigo, flightCode=IND101, totalSeats=173, cabinBaggageLimit=7, checkInBaggageLimit=15], bookings=[]]
+[INFO] : Updating Route with ID: 4
+[INFO] : Route updated: Route [route_id=4, origin=Hyderabad, destination=Bangalore, departureTime=10:08, arrivalTime=07:08, baseFare=3000.0, scheduleDate=2026-03-22, availableSeats=0, flight=Flight [flightId=5, name=SpiceJet, flightCode=SPC101, totalSeats=125, cabinBaggageLimit=7, checkInBaggageLimit=16], bookings=[]]
+[INFO] : Updating Route with ID: 5
+[INFO] : Route updated: Route [route_id=5, origin=Coimbatore, destination=Mumbai, departureTime=10:08, arrivalTime=07:08, baseFare=3000.0, scheduleDate=2026-03-23, availableSeats=0, flight=Flight [flightId=5, name=SpiceJet, flightCode=SPC101, totalSeats=125, cabinBaggageLimit=7, checkInBaggageLimit=16], bookings=[]]
+[INFO] : Updating Route with ID: 6
+[INFO] : Route updated: Route [route_id=6, origin=Vishakapattinam, destination=Coimbatore, departureTime=11:08, arrivalTime=07:30, baseFare=3000.0, scheduleDate=2026-03-31, availableSeats=0, flight=Flight [flightId=7, name=KingFisher, flightCode=KF103, totalSeats=95, cabinBaggageLimit=5, checkInBaggageLimit=15], bookings=[]]
+[INFO] : Updating Route with ID: 7
+[INFO] : Route updated: Route [route_id=7, origin=Coimbatore, destination=Pallakad, departureTime=14:08, arrivalTime=12:45, baseFare=3500.0, scheduleDate=2026-03-30, availableSeats=0, flight=Flight [flightId=4, name=KingFisher, flightCode=KF102, totalSeats=150, cabinBaggageLimit=5, checkInBaggageLimit=16], bookings=[]]
+[INFO] : Updating Route with ID: 8
+[INFO] : Route updated: Route [route_id=8, origin=Palakkad, destination=Madurai, departureTime=15:08, arrivalTime=13:45, baseFare=2500.0, scheduleDate=2026-04-01, availableSeats=0, flight=Flight [flightId=6, name=Air Kerala, flightCode=AK101, totalSeats=95, cabinBaggageLimit=5, checkInBaggageLimit=10], bookings=[]]
+[INFO] : Updating Route with ID: 9
+[INFO] : Route updated: Route [route_id=9, origin=Telangana, destination=Chennai, departureTime=15:08, arrivalTime=13:45, baseFare=2500.0, scheduleDate=2026-04-15, availableSeats=0, flight=Flight [flightId=3, name=KingFisher, flightCode=KF101, totalSeats=100, cabinBaggageLimit=5, checkInBaggageLimit=16], bookings=[]]
+[INFO] : Updating Route with ID: 10
+[INFO] : Route updated: Route [route_id=10, origin=Delhi, destination=Coimbatore, departureTime=17:08, arrivalTime=13:45, baseFare=4000.0, scheduleDate=2026-04-04, availableSeats=0, flight=Flight [flightId=8, name=Air Canada, flightCode=AC101, totalSeats=250, cabinBaggageLimit=5, checkInBaggageLimit=25], bookings=[]]
+[INFO] : Fetching all users
+[INFO] : Total users fetched: 14
+[INFO] : Fetching all users
+[INFO] : Total users fetched: 14
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 19
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 21512 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 71 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 1487 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4fd3b20a
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 6.01 seconds (process running for 6.92)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 3 ms
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 13700 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 62 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 1344 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@75f32817
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 5.852 seconds (process running for 6.391)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 4 ms
+[INFO] : Registering new user with data: UserDTO [user_id=null, username=Raaga, email=Raaga@gmail.com, password=Raaga@123, phoneNumber=null, role=ROLE_USER, registeredAt=null, admin_id=null, flightOwner_id=null]
+[INFO] : User registered with ID: 28
+[INFO] : Registering new user with data: UserDTO [user_id=null, username=Yaadhvik, email=Yaadhvik@gmail.com, password=Yaadhvik@123, phoneNumber=null, role=ROLE_ADMIN, registeredAt=null, admin_id=null, flightOwner_id=null]
+[INFO] : User registered with ID: 29
+[INFO] : Fetching all users
+[INFO] : Total users fetched: 16
+[ERROR] : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:275)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:529)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589)
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173)
+	at com.hexaware.simplyfly.security.JwtUtil.extractAllClaims(JwtUtil.java:65)
+	at com.hexaware.simplyfly.security.JwtUtil.extractClaim(JwtUtil.java:57)
+	at com.hexaware.simplyfly.security.JwtUtil.extractUsername(JwtUtil.java:49)
+	at com.hexaware.simplyfly.security.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 19528 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 90 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 1876 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68454ed5
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 7.769 seconds (process running for 8.578)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 5 ms
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 19
+[INFO] : Creating booking with data: BookingDTO [bookingId=null, bookedAt=2026-03-11T12:18:06.448, status=CONFIRMED, baseFare=3000.0, totalFare=3000.0, username=Raaga, origin=Delhi, destination=Chennai, seat=1, bookDate=2026-03-19, flightCode=AI123, flightName=Air India Express, arrivalTime=06:05, departureTime=07:05, checkInBaggageLimit=0, cabinBaggageLimit=0, passengerName=null, passengerAge=0]
+[INFO] : Booking created with ID: 31
+[WARN] : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m29s978ms465µs100ns).
+[WARN] : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m21s899ms678µs).
+[WARN] : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47m3s973ms821µs700ns).
+[WARN] : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h7m49s827ms309µs300ns).
+[INFO] : Fetching all users
+[INFO] : Total users fetched: 16
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
